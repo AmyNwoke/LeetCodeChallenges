@@ -1,6 +1,7 @@
 # LeetCodeChallenges : Thought Process and Approach
 
 Challenge 1: Average salaries excluding max and min 
+ [Average Salary Excluding the Minimum and Maximum Salary](https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/)
 ## Problem
 The task is to compute the average of salaries, excluding the minimum and maximum salaries from the array
 
@@ -39,3 +40,5 @@ To test from the main app
 create instance of the class
 Initialize salary array with values {4000,3000,1000,2000}
 call the method to calculate average and print the result
+
+
