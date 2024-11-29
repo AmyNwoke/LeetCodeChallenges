@@ -57,10 +57,16 @@ Solution Steps.
 * Step 2:
   Use the .map method to get the data from the stream. In the map, get the element x and square x using lambda expressions, `.map(x -> x*x)`.
 * Step 3:
-  Use the .sorted method on the stream that is returned by the .map method. 
-    
-  
-  
+  Use the .sorted method on the stream that is returned by the .map method.
+## Challenges 4: Add Two Numbers.
+[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/)
 
+### Problem
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+### Approach
+The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers. 
+ 
 
 
