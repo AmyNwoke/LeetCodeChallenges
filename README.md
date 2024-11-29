@@ -66,7 +66,7 @@ You are given two non-empty linked lists representing two non-negative integers.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 ### Approach
-The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers.  
+The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers. With this many factors to consider we decided that a recursive program that uses branches to deal with the various possible scenarios would be the best approach. Our solution involved using if-else-if branches to handle the type of recursive call we needed to make.
  
 
 
