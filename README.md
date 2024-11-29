@@ -66,7 +66,7 @@ You are given two non-empty linked lists representing two non-negative integers.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 ### Approach
-The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers. 
+The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers.  
  
 
 
