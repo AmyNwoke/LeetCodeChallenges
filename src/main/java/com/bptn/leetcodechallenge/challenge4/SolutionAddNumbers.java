@@ -30,8 +30,13 @@ public class SolutionAddNumbers {
 		ListNode l22 = new ListNode(6, l23);
 		ListNode l21 = new ListNode(5, l22);
 		
-		addTwoNumbers(l1,l21);
+		ListNode returnList = addTwoNumbers(l1,l21);
 		
+		System.out.println(returnList.val);
+		System.out.println(returnList.next.val);
+
+		System.out.println(returnList.next.next.val);
+		System.out.println(returnList.next.next.next.val);
 	}
 		
 	 public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
