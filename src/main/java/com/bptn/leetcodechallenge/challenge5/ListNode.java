@@ -1,6 +1,6 @@
 package com.bptn.leetcodechallenge.challenge5;
 
-public class ListNode {
+ class ListNode {
 	int val;
 	ListNode next;
 
@@ -44,4 +44,38 @@ class Solution {
 
 		return mergedList; // Returns the head of the merged list
 	}
-}
+
+
+
+	package com.bptn.leetcodechallenge.challenge5;
+
+	public class Main {
+	    public  void main(String[] args) {
+	        // Create first linked list: 1 -> 2 -> 4
+	        ListNode l3 = new ListNode(4, null);
+	        ListNode l2 = new ListNode(2, l3);
+	        ListNode l1 = new ListNode(1, l2);
+
+	        // Create second linked list: 1 -> 3 -> 4
+	        ListNode l23 = new ListNode(4, null);
+	        ListNode l22 = new ListNode(3, l23);
+	        ListNode l21 = new ListNode(1, l22);
+
+	        // Merge the two linked lists
+	        Solution solution = new Solution();
+	        ListNode mergedList = solution.mergeTwoLists(l1, l21);
+
+	        // Print the merged linked list values step by step
+	        ListNode current = mergedList;
+	        while (current != null) {
+	            System.out.println(current.val);
+	            current = current.next; // Move to the next node
+	        }
+	    }
+	}
+
+
+
+
+
+
