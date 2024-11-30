@@ -23,7 +23,7 @@ Based on the above the next thing we did was to decompose the problem and arrive
 Method leveraged: We applied the if else and for loop for traversing the array to find the min and max salary. 
 The solution was so easy and relatable to us from what we have done in class.
 
-Solution Steps 
+##### Solution Steps 
 * Step 1:
 declare array of integers to store average salary
 Initialize max and min to the first element in the salary array and initialize total to 0
@@ -51,7 +51,7 @@ We are given an input which is an Integer array our job is to square each member
 ### Approach
 Our first thought was to use loops to iterate over the array and square while we iterate over it. After iterating and squaring we sort using an insertion sort algorithm. After this initial solution we iterated on it using functional programing since that will be a concise and fairly efficient way to find a solution. After this decision the next step was to figure out a method that could allow us to index our array and apply some operation to all the elements. This is where the two methods we need comes into play map and stream. Where map allows us to apply some operation to data that is given to it from a stream. 
 
-Solution Steps.
+#### Solution Steps.
 * Step 1:
   Convert the array into a stream.
 * Step 2:
@@ -67,6 +67,18 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 
 ### Approach
 The approach that we chose with this problem had to consider the addition, carry-forwards, length of numbers and different length numbers. With this many factors to consider we decided that a recursive program that uses branches to deal with the various possible scenarios would be the best approach. Our solution involved using if-else-if branches to handle the type of recursive call we needed to make.
- 
+
+#### Solution Steps.
+* Step 0: Create a new method that will take parameters for remainder, two ListNodes and a return ListNode.
+* Step 1: Call the method created in step 0 in your main method.
+* Step 2: `The steps from here describe what the method created in step 0 does` First we check to make sure that the two current input nodes are not null, if they are not null then we access their value using `ListNode.val` syntax.
+* Step 3: Inside the branch from step 3 we first find the `sum`, our `sum` is always `ListNode.val + ListNode.val + remainder`. This way we always make sure our remainder that we passed as parameter to our method is propagated.
+* Step 4: After finding the sum. We simply reset `l1` and `l2` which are our input `ListNodes`, we set them to their next node by running `l1 = l1.next` and `l2 = l2.next`. With this we are almost setup for our first recursive call we just need to create a new node in our returnList that will hold new values.
+* Step 5: Before we make the recursive call we need to find out if there was a remainder from our `sum` variable. If there was a remainder we simply subtract 10 to give us the number that must be at this current `ListNode.val`. This also affects the type of recursive call that we make. This is because we want the remainder to be propagated.
+* Step 6: This is the step where we decide what the recursive call we make based on whether there is a remainder or not. If there is a remainder our recursive call will look like `nodeNumGetter(ListNode, ListNode, returnList, 1)` where one is the remainder we propagate. We do not neccessarily need it to be a 1 it could be a boolean letting us know there was a remainder, using just means we can add 1 directly to the `sum` which eliminates one more possible if-else branch if we used a boolean. If there is no remainder the recursive call looks like `nodeNumGetter(ListNode, ListNode, returnList, 0)` here zero added to the `sum` will obviously have no effect.
+* Step 7: 
+  
+  
+  
 
 
