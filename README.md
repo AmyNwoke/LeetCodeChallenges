@@ -78,10 +78,19 @@ The approach that we chose with this problem had to consider the addition, carry
 * Step 6: This is the step where we decide what the recursive call we make based on whether there is a remainder or not. If there is a remainder our recursive call will look like `nodeNumGetter(ListNode, ListNode, returnList, 1)` where one is the remainder we propagate. We do not neccessarily need it to be a 1 it could be a boolean letting us know there was a remainder, using just means we can add 1 directly to the `sum` which eliminates one more possible if-else branch if we used a boolean. If there is no remainder the recursive call looks like `nodeNumGetter(ListNode, ListNode, returnList, 0)` here zero added to the `sum` will obviously have no effect.
 * Step 7: This is another step where we need to make several decisions before the recursive call can be finalized. First we need to account for different length ListNodes. So in our program we check that;
   ```Java
-     if(l1 != null && l2 != null) we simply do our regular recursive call nodeNumGetter(ListNode, ListNode, returnList, remainder)
-     else if(l1 == null && l2 != null) we do a modified recursive call nodeNumGetter3(new ListNode(0), ListNode, returnList.next, remainder)
+     if(l1 != null && l2 != null) /*we simply do our regular recursive call*/ nodeNumGetter(ListNode, ListNode, returnList, remainder)
+     else if(l1 == null && l2 != null) /*we do a modified recursive call*/ nodeNumGetter3(new ListNode(0), ListNode, returnList.next, remainder) //this just creates a new node with 0 at l1 so that the addition can continue.
+     else if(l1 != null && l2 == null) /*we do a modified recursive call*/ nodeNumGetter3( ListNode, new ListNode(0), returnList.next, remainder) //here we do the mirrored version if l2 is null but l1 is not.
   ```
-  
+  This is repeated in the branch of the program that handles remainders too.
+* Step 8: Make the recursive call with the right parameters. The recursive call will continue being made until both l1 and l2 are null.
+* Step 9: `This step is only for when there is a remainder and but all the nodes are null`. Here I use an else branch in the if statment that handles the remainders. In the else branch I call a unique recursive statement where l1 is null, l2 is null but remainder is 1 `nodeNumGetter3(null, null, returnList.next, 1)`. This triggers an else branch to handle it pseudocode description below.
+```Java
+//This is where I handle the recursive call
+else if(l1 == null && l2 == null & remainder == 1){
+   returnList.val = 1; //Set the last node created by giving param returnList.next to 1 so that the remainder is added.
+}
+```
   
   
 
