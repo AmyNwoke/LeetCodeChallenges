@@ -135,7 +135,7 @@ The main steps we took were:
 * Finally, returning the head of the merged linked list.
 
 
-### Solution Steps.
+ Solution Steps.
 * Step 1: Create a method (mergeTwoLists) that takes the two sorted linked lists and returns a merged sorted list.
 * Step 2: If l1 is null, return l2 because there’s nothing to merge. The same applies if l2 is null: return l1.
 * Step 3: Compare the current values in l1 and l2. If l1.val is smaller or equal, use l1.val as the next node in the merged list and move to the next node in l1. If l2.val is smaller, do the same with l2.val and move to the next node in l2.
