@@ -15,6 +15,22 @@ public class ListNode {
 		this.val = val;
 		this.next = next;
 	}
+
+	public static void main(String[] args) {
+
+		ListNode l1 = null;
+		ListNode l2 = null;
+
+		if (l1 == null && l2 == null) {
+			System.out.println("Input");
+			System.out.println("list1 = " + "[]");
+			System.out.println("list2 = " + "[]");
+			System.out.println("Output");
+			System.out.println("[]");
+			System.out.println("Expected");
+			System.out.println("[]");
+		}
+	}
 }
 
 class Solution {
@@ -37,7 +53,8 @@ class Solution {
 
 		} else {
 
-			mergedList = new ListNode(l2.val); // if list 2 value less than list 1 value, mergedList value becomes list 2 value 
+			mergedList = new ListNode(l2.val); // if list 2 value less than list 1 value, mergedList value becomes list
+												// 2 value
 			mergedList.next = mergeTwoLists(l1, l2.next); // Merge list 1 with the rest of list 2
 
 		}
