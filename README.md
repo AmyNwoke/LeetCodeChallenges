@@ -117,7 +117,7 @@ else if(l1 == null && l2 == null & remainder == 1){
    returnList.val = 1; //Set the last node created by giving param returnList.next to 1 so that the remainder is added.
 }
 ```
-### Challenge 5: Merge Two Sorted Lists
+## Challenge 5: Merge Two Sorted Lists
 [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 
 ### Problem
