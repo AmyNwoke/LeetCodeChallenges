@@ -76,7 +76,11 @@ The approach that we chose with this problem had to consider the addition, carry
 * Step 4: After finding the sum. We simply reset `l1` and `l2` which are our input `ListNodes`, we set them to their next node by running `l1 = l1.next` and `l2 = l2.next`. With this we are almost setup for our first recursive call we just need to create a new node in our returnList that will hold new values.
 * Step 5: Before we make the recursive call we need to find out if there was a remainder from our `sum` variable. If there was a remainder we simply subtract 10 to give us the number that must be at this current `ListNode.val`. This also affects the type of recursive call that we make. This is because we want the remainder to be propagated.
 * Step 6: This is the step where we decide what the recursive call we make based on whether there is a remainder or not. If there is a remainder our recursive call will look like `nodeNumGetter(ListNode, ListNode, returnList, 1)` where one is the remainder we propagate. We do not neccessarily need it to be a 1 it could be a boolean letting us know there was a remainder, using just means we can add 1 directly to the `sum` which eliminates one more possible if-else branch if we used a boolean. If there is no remainder the recursive call looks like `nodeNumGetter(ListNode, ListNode, returnList, 0)` here zero added to the `sum` will obviously have no effect.
-* Step 7: 
+* Step 7: This is another step where we need to make several decisions before the recursive call can be finalized. First we need to account for different length ListNodes. So in our program we check that;
+  ```Java
+     if(l1 != null && l2 != null) we simply do our regular recursive call nodeNumGetter(ListNode, ListNode, returnList, remainder)
+     else if(l1 == null && l2 != null) we do a modified recursive call nodeNumGetter3(new ListNode(0), ListNode, returnList.next, remainder)
+  ```
   
   
   
