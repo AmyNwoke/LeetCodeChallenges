@@ -75,7 +75,7 @@ Our decision on how to approach this problem was to use a map where we go from 0
 * Step 3: We start a for loop here that goes up to the end of the array.
 * Step 4: Start a try catch block.
 * Step 5: In the try block use and if statement, it says
-```
+```Java
 if(nums[i+1] != nums[i] +1) {
 return nums[i]+1; //Here we return the number that would have been at nums[i+1] but since it is missing nums[i+1] != nums[i] + 1
 } 
