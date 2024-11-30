@@ -58,6 +58,19 @@ Our first thought was to use loops to iterate over the array and square while we
   Use the .map method to get the data from the stream. In the map, get the element x and square x using lambda expressions, `.map(x -> x*x)`.
 * Step 3:
   Use the .sorted method on the stream that is returned by the .map method.
+
+## Challenges 3: Missing Number
+ [Missing Number](https://leetcode.com/problems/missing-number/)
+
+### Problem
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+### Approach
+
+#### Solution Steps.
+* Step 1:
+  
+
 ## Challenges 4: Add Two Numbers.
 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/)
 
