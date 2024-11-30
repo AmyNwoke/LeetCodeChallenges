@@ -125,20 +125,22 @@ The task is to merge two sorted linked lists into one sorted list by joining the
 
 ### Approach
 We decided to use recursion to compare the nodes, which was similar to what we did in the 4th challenge. We were given two sorted linked lists and had to merge them into a single sorted linked list in non-decreasing order. Additionally, if one of the lists is empty, the non-empty list would be the result. Knowing this, we originally created two different methods to handle this problem (one as the main entry point to merge the lists, and the other to recursively merge the nodes of the lists). Later, we simplified this into one method.
+
 The main steps we took were:
-Checking if a list is null, and if so, returning the other list.
-Comparing the values at the current nodes of both lists.
-Using the lesser (smaller) value as the next node in the merged list.
-Recursively merging the remaining nodes of the lists.
-Finally, returning the head of the merged linked list.
+
+* Checking if a list is null, and if so, returning the other list.
+* Comparing the values at the current nodes of both lists.
+* Using the lesser (smaller) value as the next node in the merged list.
+* Recursively merging the remaining nodes of the lists.
+* Finally, returning the head of the merged linked list.
 
 
 ### Solution Steps.
-Step 1: Create a method (mergeTwoLists) that takes the two sorted linked lists and returns a merged sorted list.
-Step 2: If l1 is null, return l2 because there’s nothing to merge. The same applies if l2 is null: return l1.
-Step 3: Compare the current values in l1 and l2. If l1.val is smaller or equal, use l1.val as the next node in the merged list and move to the next node in l1. If l2.val is smaller, do the same with l2.val and move to the next node in l2.
-Step 4: Recursively call the mergeTwoLists method for the remaining nodes and attach the result to the next pointer of the merged list.
-Step 5: Repeat until one of the lists is empty, at which point attach the rest of the non-empty list to the merged list. Then, return the head of the merged list.
+* Step 1: Create a method (mergeTwoLists) that takes the two sorted linked lists and returns a merged sorted list.
+* Step 2: If l1 is null, return l2 because there’s nothing to merge. The same applies if l2 is null: return l1.
+* Step 3: Compare the current values in l1 and l2. If l1.val is smaller or equal, use l1.val as the next node in the merged list and move to the next node in l1. If l2.val is smaller, do the same with l2.val and move to the next node in l2.
+* Step 4: Recursively call the mergeTwoLists method for the remaining nodes and attach the result to the next pointer of the merged list.
+* Step 5: Repeat until one of the lists is empty, at which point attach the rest of the non-empty list to the merged list. Then, return the head of the merged list.
 
 
   
