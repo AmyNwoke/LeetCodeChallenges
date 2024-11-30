@@ -60,15 +60,28 @@ Our first thought was to use loops to iterate over the array and square while we
   Use the .sorted method on the stream that is returned by the .map method.
 
 ## Challenges 3: Missing Number
- [Missing Number](https://leetcode.com/problems/missing-number/)
+[Missing Number](https://leetcode.com/problems/missing-number/)
 
 ### Problem
 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+An unstated constraint is that there can be only one missing number. Our approach acknowledges this and assumes that there is only one.
 
 ### Approach
+Our decision on how to approach this problem was to use a map where we go from 0 to the length of the input array. We did this because the problem says the numbers will go from 0 to length of the array. This approach was fine but not quite as efficient as we would have liked. It required a for loop to create and add to the numbers to the Map this simply put nothing as the keys, another for loop for put the String "exists" as the keys for all the values in the map that were also in the key, we did this by indexing the array, and a third loop to convert the Map into and entrySet that I could iterate over and find out if a key still had a null value then I would return that key. This solution was fairly efficient with the 3 loops but figured there must be a better approach to it. So brainstormed for a bit and decided that we could simply sort the array, after sorting we would just check if the values are incrementing by one if there is just a case where it is not we found our missing number.
 
 #### Solution Steps.
-* Step 1:
+* Step 1: Sort the input array. It is sorted in ascending order.
+* Step 2: `This is a short circuit branch` If the first index; `array[0] != 0` then `return 0` since every array must start from 0.
+* Step 3: We start a for loop here that goes up to the end of the array.
+* Step 4: Start a try catch block.
+* Step 5: In the try block use and if statement, it says
+```
+if(nums[i+1] != nums[i] +1) {
+return nums[i]+1; //Here we return the number that would have been at nums[i+1] but since it is missing nums[i+1] != nums[i] + 1
+} 
+```
+It returns the value arr[i]+1 when arr[i+1] != arr[i]+1, it returns the current value + 1 if the next value that is the value to the right of the current value is not the current value + 1
+* Step 6: In the catch block we catch an `ArrayIndexOutOfBoundsException`, this exception would mean we have reached the end of the list and did not find a missig number. This simply means that the missing number is the `arr.length` or `arr[i]+1` since `i == arr.length`, if that is the case we just return the current last element + 1 to get the missing number.
   
 
 ## Challenges 4: Add Two Numbers.
